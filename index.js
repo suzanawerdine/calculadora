@@ -1,15 +1,17 @@
-const readline = require("readline");
 
-const leitor = readline.createInterface({
+import {createInterface} from "readline";
+import {soma, subtracao, multiplicacao, divisao} from "./calculadora.js";
+
+const leitor = createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
 leitor.question("Digite o primeiro número:\n> ", (numero1) => {
 
-    leitor.question("Escolha a operação (+, -, *, /): ", (operacao) => {
+    leitor.question("Escolha a operação (+, -, *, /):\n> ", (operacao) => {
 
-        leitor.question("Digite o segundo número: ", (numero2) => {
+        leitor.question("Digite o segundo número:\n> ", (numero2) => {
 
             const num1 = Number(numero1);
             const num2 = Number(numero2);
